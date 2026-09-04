@@ -378,6 +378,69 @@ footer {
 
 <section class="cta" id="contact">
 
+  <h2>Order <span>Plant Booster</span></h2>
+
+  <p>Select your quantity</p>
+
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:25px 0;">
+
+    <button class="qty active" id="qty1" onclick="selectQty(1)">1 Bottle</button>
+
+    <button class="qty" id="qty2" onclick="selectQty(2)">2 Bottles</button>
+
+    <button class="qty" id="qty5" onclick="selectQty(5)">5 Bottles</button>
+
+    <button class="qty" id="qty10" onclick="selectQty(10)">10 Bottles</button>
+
+  </div>
+
+  <a
+    id="whatsappOrder"
+    class="btn primary"
+    href="https://wa.me/918527098199?text=Hello%2C%20mujhe%20Plant%20Booster%20order%20karna%20hai.%20Quantity%3A%201%20bottle."
+    target="_blank">
+    Order on WhatsApp
+  </a>
+
+</section>
+
+<style>
+.qty {
+  padding: 12px 20px;
+  border: 1px solid #777;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.qty.active {
+  transform: scale(1.05);
+  font-weight: bold;
+}
+</style>
+
+<script>
+function selectQty(quantity) {
+
+  document.querySelectorAll('.qty').forEach(function(button) {
+    button.classList.remove('active');
+  });
+
+  document.getElementById('qty' + quantity).classList.add('active');
+
+  const message =
+    "Hello, mujhe Plant Booster order karna hai. Quantity: " +
+    quantity +
+    " bottle.";
+
+  document.getElementById('whatsappOrder').href =
+    "https://wa.me/918527098199?text=" +
+    encodeURIComponent(message);
+}
+</script>
+
     <h2>Give Your Plants<br><span>A Better Start.</span></h2>
 
     <p>
